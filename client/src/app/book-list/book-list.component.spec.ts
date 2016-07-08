@@ -1,7 +1,8 @@
 /* tslint:disable:no-unused-variable */
 
-import { By }           from '@angular/platform-browser';
+import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
+import { Http, HTTP_PROVIDERS } from '@angular/http';
 
 import {
   beforeEach, beforeEachProviders,
@@ -13,8 +14,12 @@ import {
 import { BookListComponent } from './book-list.component';
 
 describe('Component: BookList', () => {
-  it('should create an instance', () => {
-    let component = new BookListComponent();
+  beforeEachProviders(() => [
+    HTTP_PROVIDERS
+  ]);
+
+  it('should create an instance', inject([Http], (http) => {
+    let component = new BookListComponent(http);
     expect(component).toBeTruthy();
-  });
+  }));
 });
