@@ -14,7 +14,7 @@ export class BookListComponent implements OnInit {
 
   ngOnInit() {
     this.http.get('/api/books.json')
-      .subscribe((response) => this.books = response.json());
+      .subscribe(response => this.books = response.json());
   }
 
 }
