@@ -21,9 +21,11 @@ import {
 } from '@angular/core/testing';
 
 import { BookListComponent } from './book-list.component';
+import { BookService } from '../book.service';
 
 describe('Component: BookList', () => {
   beforeEachProviders(() => [
+    BookService,
     HTTP_PROVIDERS,
     MockBackend,
     BaseRequestOptions,
@@ -33,14 +35,14 @@ describe('Component: BookList', () => {
       },
       deps: [MockBackend, BaseRequestOptions]
     })
-  ]);;
+  ]);
 
-  it('should create an instance', inject([Http], (http) => {
-    let component = new BookListComponent(http);
+  it('should create an instance', inject([BookService], (bookService) => {
+    let component = new BookListComponent(bookService);
     expect(component).toBeTruthy();
   }));
 
-  it('should assign a list of books', inject([Http, MockBackend], (http, backend) => {
+  it('should assign a list of books', inject([BookService, MockBackend], (bookService, backend) => {
     var response = new Response(new ResponseOptions({
       body: [{ name: 'Whiteboard Interviews' }]
     }));
@@ -49,7 +51,7 @@ describe('Component: BookList', () => {
       connection.mockRespond(response);
     });
 
-    let component = new BookListComponent(http);
+    let component = new BookListComponent(bookService);
     component.ngOnInit();
     expect(component.books).toEqual([{ name: 'Whiteboard Interviews' }]);
   }));
