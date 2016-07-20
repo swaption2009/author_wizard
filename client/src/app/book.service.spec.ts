@@ -39,4 +39,18 @@ describe('Book Service', () => {
       inject([BookService], (service: BookService) => {
     expect(service).toBeTruthy();
   }));
+
+  it('should assign a list of books', inject([BookService, MockBackend, Http], (bookService, backend, http) => {
+    backend.connections.subscribe(connection => {
+      var mockResponse = new Response(new ResponseOptions({
+        body: [{ name: 'Whiteboard Interviews' }]
+      }));
+      connection.mockRespond(mockResponse);
+    });
+
+    let service = new BookService(http);
+    service.getList().subscribe(response => {
+      expect(response.json()).toEqual([{ name: 'Whiteboard Interviews' }]);
+    });
+  }));
 });
