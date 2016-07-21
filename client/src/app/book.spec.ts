@@ -10,6 +10,6 @@ import {Book} from './book';
 
 describe('Book', () => {
   it('should create an instance', () => {
-    expect(new Book()).toBeTruthy();
+    expect(new Book('How to Win Friends and Influence People')).toBeTruthy();
   });
 });
