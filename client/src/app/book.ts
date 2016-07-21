@@ -1,3 +1,3 @@
 export class Book {
-  constructor(public name: string) {}
+  constructor(public name?: string) {}
 }
