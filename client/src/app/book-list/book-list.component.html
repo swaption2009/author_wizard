@@ -5,6 +5,6 @@
 <table>
   <tr *ngFor="let book of books">
     <td>{{ book.name }}</td>
-    <td><a (click)="delete(book)">Delete</a></td>
+    <td><a routerLink="" (click)="delete(book)">Delete</a></td>
   </tr>
 </table>
