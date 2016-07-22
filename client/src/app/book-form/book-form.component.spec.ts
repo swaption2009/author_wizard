@@ -1,9 +1,12 @@
 /* tslint:disable:no-unused-variable */
 
 import { By } from '@angular/platform-browser';
-import { DebugElement } from '@angular/core';
+import { DebugElement, provide } from '@angular/core';
 import { HTTP_PROVIDERS } from '@angular/http';
-import { ROUTER_PROVIDERS, Router } from '@angular/router';
+import { ActivatedRoute, RouterConfig, Router } from '@angular/router';
+
+class MockRouter { createUrlTree() {} }
+class MockActivatedRoute { }
 
 import {
   beforeEach, beforeEachProviders,
@@ -18,7 +21,8 @@ import { BookService } from '../book.service';
 describe('Component: BookForm', () => {
   beforeEachProviders(() => [
     BookService,
-    Router,
+    provide(Router, { useClass: MockRouter }),
+    provide(ActivatedRoute, { useClass: MockActivatedRoute }),
     HTTP_PROVIDERS
   ]);
 
