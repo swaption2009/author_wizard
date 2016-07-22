@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ROUTER_DIRECTIVES } from '@angular/router';
 import { BookService } from '../book.service';
-import { BookFormComponent } from '../book-form';
 
 @Component({
   moduleId: module.id,
@@ -8,7 +8,7 @@ import { BookFormComponent } from '../book-form';
   templateUrl: 'book-list.component.html',
   styleUrls: ['book-list.component.css'],
   providers: [BookService],
-  directives: [BookFormComponent]
+  directives: [ROUTER_DIRECTIVES]
 })
 export class BookListComponent implements OnInit {
   books: any;
