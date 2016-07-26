@@ -10,6 +10,10 @@ export class BookService {
     return this.http.get('/api/books.json');
   }
 
+  find(id) {
+    return this.http.get('/api/books/' + id + '.json');
+  }
+
   delete(book) {
     return this.http.delete('/api/books/' + book.id + '.json');
   }
@@ -19,6 +23,10 @@ export class BookService {
     let headers = new Headers({ 'Content-Type': 'application/json' });
     let options = new RequestOptions({ headers: headers });
 
-    return this.http.post('/api/books.json', body, options);
+    if (book.id) {
+      return this.http.patch('/api/books/' + book.id + '.json', body, options);
+    } else {
+      return this.http.post('/api/books.json', body, options);
+    }
   }
 }

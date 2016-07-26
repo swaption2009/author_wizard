@@ -37,6 +37,7 @@ const barrels: string[] = [
   'app/book-list',
   'app/book-form',
   'app/new-book',
+  'app/edit-book',
   /** @cli-barrel */
 ];
 
