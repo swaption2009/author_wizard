@@ -5,28 +5,11 @@
   <title>AuthorWizard</title>
   <base href="/">
 
-  {{#if environment.development}}
-  <script src="/ember-cli-live-reload.js" type="text/javascript"></script>
-  {{/if}}
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
-  <link rel="stylesheet" href="vendor/bootstrap/dist/css/bootstrap.min.css">
+  
 </head>
 <body>
-  <div class="container">
-    <app-root>Loading...</app-root>
-  </div>
-
-    {{#each scripts.polyfills}}
-    <script src="{{.}}"></script>
-    {{/each}}
-    <script>
-      System.import('system-config.js').then(function () {
-        System.import('main');
-      }).catch(console.error.bind(console));
-    </script>
-
-
-
+  <app-root>Loading...</app-root>
 </body>
 </html>
