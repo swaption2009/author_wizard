@@ -14,7 +14,7 @@ import {
 
 import { BookListComponent } from './book-list.component';
 import { BookService } from '../book.service';
-import { BookFormComponent } from '../book-form/book-form.component';
+import { MockBookFormComponent } from '../book-form/mock-book-form.component';
 
 describe('Component: BookList', () => {
   let fixture;
@@ -39,7 +39,7 @@ describe('Component: BookList', () => {
       ],
       declarations: [
         BookListComponent,
-        BookFormComponent
+        MockBookFormComponent
       ]
     });
 

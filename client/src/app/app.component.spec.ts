@@ -13,7 +13,7 @@ import {
 
 import { AppComponent } from './app.component';
 import { BookListComponent } from './book-list/book-list.component';
-import { BookFormComponent } from './book-form/book-form.component';
+import { MockBookFormComponent } from './book-form/mock-book-form.component';
 
 describe('App: AuthorWizard', () => {
   beforeEach(() => {
@@ -32,7 +32,7 @@ describe('App: AuthorWizard', () => {
       declarations: [
         AppComponent,
         BookListComponent,
-        BookFormComponent
+        MockBookFormComponent
       ],
     });
   });
