@@ -7,12 +7,14 @@ import { AppComponent } from './app.component';
 import { routing, appRoutingProviders } from './app.routing';
 import { BookListComponent } from './book-list/book-list.component';
 import { BookFormComponent } from './book-form/book-form.component';
+import { NewBookComponent } from './new-book/new-book.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     BookListComponent,
-    BookFormComponent
+    BookFormComponent,
+    NewBookComponent
   ],
   imports: [
     BrowserModule,
