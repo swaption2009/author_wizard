@@ -10,6 +10,10 @@ export class BookService {
     return this.http.get('/api/books.json');
   }
 
+  find(id) {
+    return this.http.get('/api/books/' + id + '.json');
+  }
+
   delete(book) {
     return this.http.delete('/api/books/' + book.id + '.json');
   }

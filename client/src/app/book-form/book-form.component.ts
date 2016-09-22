@@ -16,7 +16,10 @@ export class BookFormComponent implements OnInit {
   constructor(private bookService: BookService, private router: Router) { }
 
   ngOnInit() {
-    console.log(this.bookId);
+    if (this.bookId) {
+      this.bookService.find(this.bookId)
+        .subscribe(response => this.model = response.json());
+    }
   }
 
   onSubmit() {
