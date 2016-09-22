@@ -3,6 +3,7 @@
 import { TestBed, async } from '@angular/core/testing';
 import { MockBackend } from '@angular/http/testing';
 import { FormsModule } from '@angular/forms';
+import { Router } from '@angular/router';
 
 import {
   Http,
@@ -14,6 +15,8 @@ import {
 
 import { BookFormComponent } from './book-form.component';
 import { BookService } from '../book.service';
+
+class MockRouter { createUrlTree() {} }
 
 describe('Component: BookForm', () => {
   beforeEach(() => {
@@ -28,7 +31,11 @@ describe('Component: BookForm', () => {
           },
           deps: [MockBackend, BaseRequestOptions]
         },
-        BookService
+        {
+          provide: Router,
+          useClass: MockRouter
+        },
+        BookService,
       ],
       declarations: [BookFormComponent],
       imports: [FormsModule]
