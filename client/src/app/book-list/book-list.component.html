@@ -2,6 +2,9 @@
   <a routerLink="/new-book">New Book</a>
 </nav>
 
-<ul>
-  <li *ngFor="let book of books">{{ book.name }}</li>
-</ul>
+<table>
+  <tr *ngFor="let book of books">
+    <td>{{ book.name }}</td>
+    <td><a routerLink="" (click)="delete(book)">Delete</a></td>
+  </tr>
+</table>
