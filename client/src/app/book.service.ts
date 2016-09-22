@@ -23,6 +23,10 @@ export class BookService {
     let headers = new Headers({ 'Content-Type': 'application/json' });
     let options = new RequestOptions({ headers: headers });
 
-    return this.http.post('/api/books.json', body, options);
+    if (book.id) {
+      return this.http.patch('/api/books/' + book.id + '.json', body, options);
+    } else {
+      return this.http.post('/api/books.json', body, options);
+    }
   }
 }
