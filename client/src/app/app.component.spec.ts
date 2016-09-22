@@ -2,6 +2,7 @@
 
 import { TestBed, async } from '@angular/core/testing';
 import { MockBackend } from '@angular/http/testing';
+import { RouterTestingModule } from '@angular/router/testing';
 
 import {
   Http,
@@ -34,6 +35,7 @@ describe('App: AuthorWizard', () => {
         BookListComponent,
         MockBookFormComponent
       ],
+      imports: [RouterTestingModule]
     });
   });
 
