@@ -17,11 +17,9 @@ export class BookFormComponent implements OnInit {
   }
 
   onSubmit() {
-    /*
     this.bookService
       .save(this.model)
       .subscribe(response => console.log(response));
-     */
   }
 
 }
