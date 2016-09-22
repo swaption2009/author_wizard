@@ -1,7 +1,9 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-book-form',
   template: ''
 })
-export class MockBookFormComponent { }
+export class MockBookFormComponent {
+  @Input() bookId = '';
+}

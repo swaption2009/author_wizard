@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { Router } from '@angular/router';
 import { Book } from '../book';
 import { BookService } from '../book.service';
@@ -9,12 +9,14 @@ import { BookService } from '../book.service';
   styleUrls: ['./book-form.component.css']
 })
 export class BookFormComponent implements OnInit {
+  @Input() bookId = '';
 
   model = new Book('');
 
   constructor(private bookService: BookService, private router: Router) { }
 
   ngOnInit() {
+    console.log(this.bookId);
   }
 
   onSubmit() {
