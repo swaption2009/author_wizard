@@ -10,7 +10,7 @@ import { BookService } from '../book.service';
 })
 export class BookFormComponent implements OnInit {
 
-  model = new Book('Some book');
+  model = new Book('');
 
   constructor(private bookService: BookService, private router: Router) { }
 
