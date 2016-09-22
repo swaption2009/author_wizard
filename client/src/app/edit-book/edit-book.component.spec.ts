@@ -43,7 +43,6 @@ describe('Component: EditBook', () => {
   it('should create an instance', () => {
     let fixture = TestBed.createComponent(EditBookComponent);
     let component = fixture.debugElement.componentInstance;
-    //let bookService = fixture.debugElement.injector.get(BookService);
     expect(component).toBeTruthy();
   });
 });
